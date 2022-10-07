@@ -6,7 +6,7 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: cimg/python:3.10.7
+      - image: cimg/python:3.10.2
     steps:
       - checkout
       - run: 
@@ -15,9 +15,9 @@ jobs:
             pytest --junitxml=test-results/junit.xml TestTriangle.py
       - store_test_results:
           path: test-results
-  github-api:
+  api:
     docker:
-      - image: cimg/python:3.10.7
+      - image: cimg/python:3.10.2
     steps:
       - checkout
       - run:
@@ -31,5 +31,5 @@ jobs:
 workflows:
   testing_api:
     jobs:
-      - github-api
+      - api
       - build-and-test
