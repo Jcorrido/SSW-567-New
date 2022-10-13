@@ -24,7 +24,7 @@ jobs:
           command: |
             pip install pytest
             pip install requests
-            pytest --junitxml=test-results/junit.xml TestApi.py
+            pytest --junitxml=test-results/junit.xml TestGetApi.py
       - store_test_results:
           path: test-results
 
